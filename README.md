@@ -1,5 +1,5 @@
 # Audio Timer
-Timer voice web app. No seed project or generator used.
+Timer voice web app. No seed project or generator used. Project uses component based thinking for design and development.
 
 ### Tools used:
 * ES6
