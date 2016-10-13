@@ -6,7 +6,7 @@ import 'foundation-sites/css/foundation.css';
 
 import { app, router } from './app';
 import about from './app/about';
-import '../main.scss';
+import './main.scss';
 
 let appModule = angular.module('app', [
   'ui.router',

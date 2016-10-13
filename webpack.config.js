@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  context: path.resolve('./src/js'),
+  context: path.resolve('./src'),
   entry: {
     app: './index',
     vendor: [
