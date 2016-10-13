@@ -1,17 +1,11 @@
 var path = require('path');
-var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: path.resolve('./src'),
   entry: {
-    app: './index',
-    vendor: [
-      'angular',
-      'angular-foundation/mm-foundation.js',
-      'angular-ui-router/release/angular-ui-router.js'
-    ]
+    app: './index'
   },
   module: {
     preloaders: [
@@ -49,9 +43,6 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    extensions: ['', '.js']
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve('./src/index.html'),
@@ -59,7 +50,6 @@ module.exports = {
       inject: 'body',
       hash: true
     }),
-    new ExtractTextPlugin('[name].bundle.css'),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
+    new ExtractTextPlugin('bundle.css')
   ]
 };

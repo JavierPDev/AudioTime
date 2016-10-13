@@ -4,7 +4,7 @@ var config = require('./webpack.config');
 
 config.output = {
   path: './dist/',
-  filename: '[name].bundle.js'
+  filename: 'bundle.js'
 };
 config.plugins.push(new webpack.optimize.UglifyJsPlugin({
   mangle: {

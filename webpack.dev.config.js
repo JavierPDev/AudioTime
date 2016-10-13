@@ -5,7 +5,7 @@ var config = require('./webpack.config');
 config.output = {
   path: './dist/',
   publicPath: '/',
-  filename: '[name].bundle.js'
+  filename: 'bundle.js'
 };
 config.devServer = {
   contentBase: 'dist',
