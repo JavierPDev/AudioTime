@@ -1,5 +1,7 @@
 export default function(appModule) {
   appModule.config(function($stateProvider, $locationProvider) {
+    'ngInject';
+
     $stateProvider
       .state({
         name: 'about',
