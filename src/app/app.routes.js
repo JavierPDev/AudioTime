@@ -4,7 +4,7 @@ export default function(appModule) {
       .state({
         name: 'about',
         url: '/about',
-        component: 'about'
+        component: 'atAbout'
       })
 
     $locationProvider.html5Mode(true);
