@@ -8,7 +8,8 @@ config.output = {
   filename: '[name].bundle.js'
 };
 config.devServer = {
-  contentBase: 'dist'
+  contentBase: 'dist',
+  historyApiFallback: true
 };
 config.plugins.push(
   new webpack.HotModuleReplacementPlugin()
