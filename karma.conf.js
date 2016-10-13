@@ -8,7 +8,7 @@ module.exports = function(config) {
     basePath: './',
 
     // Explicitly set plugins otherwise karma fails
-		plugins: [
+    plugins: [
       require('karma-chrome-launcher'),
       require('karma-jasmine'),
       require('karma-babel-preprocessor'),
@@ -35,8 +35,7 @@ module.exports = function(config) {
 
 
     // list of files to exclude
-    exclude: [
-    ],
+    exclude: [],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
@@ -45,14 +44,14 @@ module.exports = function(config) {
       './src/**/*.spec.js': ['babel']
     },
 
-		webpack: webpackConfig,
+    webpack: webpackConfig,
 
-		webpackMiddleware: {
-			// webpack-dev-middleware configuration
-			// i. e.
-		stats: 'errors-only'
+    webpackMiddleware: {
+      // webpack-dev-middleware configuration
+      // i. e.
+      stats: 'errors-only'
     },
-    
+
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
