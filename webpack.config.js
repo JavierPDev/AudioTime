@@ -10,9 +10,7 @@ module.exports = {
     vendor: [
       'angular',
       'angular-foundation/mm-foundation.js',
-      'angular-ui-router/release/angular-ui-router.js',
-      'foundation-sites/css/normalize.css',
-      'foundation-sites/css/foundation.css'
+      'angular-ui-router/release/angular-ui-router.js'
     ]
   },
   module: {
