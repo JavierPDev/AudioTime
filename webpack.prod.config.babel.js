@@ -37,4 +37,4 @@ config.plugins.push(new webpack.optimize.UglifyJsPlugin({
   }
 }));
 
-module.exports = config;
+export default config

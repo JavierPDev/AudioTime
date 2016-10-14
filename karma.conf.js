@@ -1,4 +1,7 @@
-var webpackConfig = require('./webpack.dev.config.js');
+// Babel required for es6 code in webpack config
+require('babel-register');
+
+var webpackConfig = require('./webpack.dev.config.babel.js');
 webpackConfig.entry = {};
 
 module.exports = function(config) {

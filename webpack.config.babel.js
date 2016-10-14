@@ -2,7 +2,7 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-module.exports = {
+export default {
   context: path.resolve('./src'),
   entry: {
     app: './index'
