@@ -17,21 +17,6 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css-loader!autoprefixer-loader'
-        )
-      },
-      {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css-loader!autoprefixer-loader!sass-loader'
-        )
-      },
-      {
         test: /\.html$/,
         exclude: /node_modules/,
         loader: 'raw-loader'
