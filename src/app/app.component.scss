@@ -1,5 +1,15 @@
 html,
 body {
+  background: red;
   height: 100%;
   margin: 0;
+}
+
+.off-canvas-wrap,
+.left-off-canvas-menu {
+  min-height: 100vh;
+}
+
+div.move-right a.exit-off-canvas {
+  box-shadow: none;
 }
