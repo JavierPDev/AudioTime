@@ -1,10 +1,11 @@
-# Audio Timer
+# Audio Time
 Timer voice web app. No seed project or generator used. Project uses component based thinking for design and development.
 
 ### Tools used:
 * ES6
 * Webpack
 * Angularjs
+* Annyang
 * Foundation
 * Angular-foundation
 * Babel
@@ -23,9 +24,21 @@ npm start
 # Build app into /dist directory
 npm run build
 
-# Run tests
+# Run server using production files in /dist
+npm run server.prod
+
+# Run unit tests and end-to-end tests in production mode
 npm test
 
-# Run tests in watch mode as daemon
-npm run testd
+# Run unit tests
+npm run test.unit
+
+# Run unit tests in watch mode as daemon
+npm run testd.unit
+
+# Run end-to-end test in development mode
+npm run test.e2e.dev
+
+# Run end-to-end tests in production mode. Slower than dev but more accurate for end user experience.
+npm run test.e2e.prod
 ```

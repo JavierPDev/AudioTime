@@ -4,6 +4,11 @@ export default function(appModule) {
 
     $stateProvider
       .state({
+        name: 'stopwatch',
+        url: '/stopwatch',
+        component: 'atStopwatch'
+      })
+      .state({
         name: 'about',
         url: '/about',
         component: 'atAbout'
