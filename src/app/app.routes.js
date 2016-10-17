@@ -9,6 +9,11 @@ export default function(appModule) {
         component: 'atStopwatch'
       })
       .state({
+        name: 'timer',
+        url: '/timer',
+        component: 'atTimer'
+      })
+      .state({
         name: 'about',
         url: '/about',
         component: 'atAbout'
