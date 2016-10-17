@@ -8,13 +8,6 @@ export default {
     app: './index'
   },
   module: {
-    preloaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader'
-      }
-    ],
     loaders: [
       {
         test: /\.html$/,
@@ -24,7 +17,7 @@ export default {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'ng-annotate!babel-loader'
+        loader: 'ng-annotate!babel-loader!eslint-loader'
       }
     ]
   },
