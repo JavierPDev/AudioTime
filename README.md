@@ -12,6 +12,7 @@ Timer voice web app. No seed project or generator used. Project uses component b
 * eslint
 * Karma test runner
 * Jasmine testing framework
+* Protractor end-to-end testing framework for Angularjs
 
 ### Instructions
 ```bash
