@@ -9,22 +9,22 @@ export default function StopwatchComponent(appModule) {
 }
 
 class StopwatchController {
-  constructor(VoiceService) {
+  constructor(voiceService) {
     'ngInject';
 
     this.listening = false;
-    this._VoiceService = VoiceService;
+    this._voiceService = voiceService;
   }
 
   listen() {
     console.log('component:listening');
     this.listening = true;
-    this._VoiceService.listen();
+    this._voiceService.listen();
   }
 
   stopListening() {
     console.log('component:stopListening');
     this.listening = false;
-    this._VoiceService.stopListening();
+    this._voiceService.stopListening();
   }
 }

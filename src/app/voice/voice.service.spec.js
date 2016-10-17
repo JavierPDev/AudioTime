@@ -1,13 +1,13 @@
-describe('VoiceService', () => {
-  let VoiceService;
+describe('voiceService', () => {
+  let voiceService;
 
   beforeEach(module('app'));
-  beforeEach(inject((_VoiceService_) => {
-    VoiceService = _VoiceService_;
+  beforeEach(inject((_voiceService_) => {
+    voiceService = _voiceService_;
   }));
 
   it('exists', () => {
-    expect(VoiceService).toBeDefined();
+    expect(voiceService).toBeDefined();
   });
 });
 

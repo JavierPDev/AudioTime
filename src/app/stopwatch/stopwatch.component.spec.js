@@ -1,13 +1,13 @@
 describe('StopwatchComponent', () => {
   let ctrl;
   let scope;
-  let VoiceService;
+  let voiceService;
 
   beforeEach(module('app'));
-  beforeEach(inject(($rootScope, $componentController, _VoiceService_) => {
+  beforeEach(inject(($rootScope, $componentController, _voiceService_) => {
     scope = $rootScope.$new();
     ctrl = $componentController('atStopwatch', {$scope: scope});
-    VoiceService = _VoiceService_;
+    voiceService = _voiceService_;
   }));
 
   describe('controller', () => {
