@@ -9,22 +9,10 @@ export default function TimerComponent(appModule) {
 }
 
 class TimerController {
-  constructor(VoiceService) {
+  constructor(timerService) {
     'ngInject';
 
-    this.listening = false;
-    this._VoiceService = VoiceService;
-  }
-
-  listen() {
-    console.log('component:listening');
-    this.listening = true;
-    this._VoiceService.listen();
-  }
-
-  stopListening() {
-    console.log('component:stopListening');
-    this.listening = false;
-    this._VoiceService.stopListening();
+    this.timerService = timerService;
+    this.time = timerService.time;
   }
 }

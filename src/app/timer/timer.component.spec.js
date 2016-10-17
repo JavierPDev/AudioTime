@@ -1,13 +1,13 @@
 describe('TimerComponent', () => {
   let ctrl;
   let scope;
-  let VoiceService;
+  let timerService;
 
   beforeEach(module('app'));
-  beforeEach(inject(($rootScope, $componentController, _VoiceService_) => {
+  beforeEach(inject(($rootScope, $componentController, _timerService_) => {
     scope = $rootScope.$new();
     ctrl = $componentController('atTimer', {$scope: scope});
-    VoiceService = _VoiceService_;
+    timerService = _timerService_;
   }));
 
   describe('controller', () => {
@@ -16,23 +16,8 @@ describe('TimerComponent', () => {
       expect(scope).toBeDefined();
     });
 
-    it('intantiates as not listening', () => {
-      expect(ctrl.listening).toBe(false);
-    });
-
-    it('listen() sets ctrl.listening to true', () => {
-      // Inits with false
-      expect(ctrl.listening).toBe(false);
-      ctrl.listen();
-      expect(ctrl.listening).toBe(true);
-    });
-
-    it('stopListening() sets ctrl.listening to false', () => {
-      // Manually change to true since inits false
-      ctrl.listening = true;
-      expect(ctrl.listening).toBe(true);
-      ctrl.stopListening();
-      expect(ctrl.listening).toBe(false);
+    it('intantiates time as timerService\'s time', () => {
+      expect(ctrl.time).toBe(timerService.time);
     });
   });
 });
