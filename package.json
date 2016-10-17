@@ -7,6 +7,7 @@
     "postinstall": "webdriver-manager update",
     "start": "webpack-dev-server --config webpack.dev.config.babel.js -d --inline",
     "build": "webpack --config webpack.prod.config.babel.js",
+    "lint": "eslint .",
     "test": "concurrently \"karma start\" \"npm run test.e2e.prod\" || true",
     "test.unit": "karma start",
     "testd.unit": "karma start --auto-watch --no-single-run",
