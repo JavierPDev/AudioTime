@@ -1,12 +1,20 @@
 <h3>Timer</h3>
 
-<button class="button success"
-  ng-if="!$ctrl.listening"
-  ng-click="$ctrl.listen()">
-  Listen
-</button>
-<button class="button alert"
-  ng-if="$ctrl.listening"
-  ng-click="$ctrl.stopListening()">
-  Stop Listening
-</button>
+<div>
+  <button class="button success"
+    ng-if="!$ctrl.listening"
+    ng-click="$ctrl.listen()">
+    Listen
+  </button>
+  <button class="button alert"
+    ng-if="$ctrl.listening"
+    ng-click="$ctrl.stopListening()">
+    Stop Listening
+  </button>
+</div>
+
+<div class="time">
+  <div class="time__display">
+    5:00
+  </div>
+</div>
