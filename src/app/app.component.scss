@@ -17,3 +17,23 @@ div.move-right a.exit-off-canvas {
 .nav-item-active {
   background-color: #242424;
 }
+
+// Used by both timer and stopwatch
+.time {
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 24px;
+  padding: 20px;
+}
+
+.time--active {
+  border-color: green;
+  color: green;
+}
+
+.time--paused {
+  border-color: red;
+  color: red;
+}
