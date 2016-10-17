@@ -1,7 +1,7 @@
 // Babel required for es6 code in e2e tests
 require('babel-register');
 
-let config = {
+var config = {
   baseUrl: 'http://localhost:8080',
   specs: ['./src/**/*.e2e.js'],
   capabilities: {
