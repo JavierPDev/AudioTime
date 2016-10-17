@@ -2,11 +2,11 @@ var capabilities = {
   'browserName': 'chrome'
 };
 
-if (process.env.TRAVIS) {
-  capabilities.chromeOptions = {
-    'args': ['--no-sandbox']
-  };
-}
+// if (process.env.TRAVIS) {
+//   capabilities.chromeOptions = {
+//     'args': ['--no-sandbox']
+//   };
+// }
 
 // Babel required for es6 code in e2e tests
 require('babel-register');
