@@ -23,7 +23,7 @@ class StopwatchController {
   }
 
   stopListening() {
-    console.log('component:stopListenging')
+    console.log('component:stopListening');
     this.listening = false;
     this._VoiceService.stopListening();
   }

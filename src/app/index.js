@@ -6,5 +6,5 @@ export function app(appModule) {
 }
 
 export function router(appModule) {
-  routes(appModule)
+  routes(appModule);
 }

@@ -12,7 +12,7 @@ export default function(appModule) {
         name: 'about',
         url: '/about',
         component: 'atAbout'
-      })
+      });
 
     $locationProvider.html5Mode(true);
   });
