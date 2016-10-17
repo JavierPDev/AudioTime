@@ -2,6 +2,7 @@
 require('babel-register');
 
 var webpackConfig = require('./webpack.dev.config.babel.js');
+var browsers = process.env.TRAVIS ? ['Chrome_travis_ci'] : ['Chrome'];
 webpackConfig.entry = {};
 
 module.exports = function(config) {
@@ -80,7 +81,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: browsers,
 
 
     // Continuous Integration mode
