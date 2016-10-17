@@ -35,6 +35,12 @@ config.module.loaders.push({
   )
 });
 
+config.module.loaders.push({
+  test: /\.js$/,
+  exclude: /node_modules/,
+  loader: 'ng-annotate!babel-loader!eslint-loader'
+});
+
 config.plugins.push(
   new webpack.HotModuleReplacementPlugin()
 );

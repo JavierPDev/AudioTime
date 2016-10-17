@@ -13,11 +13,6 @@ export default {
         test: /\.html$/,
         exclude: /node_modules/,
         loader: 'raw-loader'
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'ng-annotate!babel-loader!eslint-loader'
       }
     ]
   },

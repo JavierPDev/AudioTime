@@ -26,6 +26,13 @@ config.module.loaders.push({
   )
 });
 
+// Strip debug code from js in addition to usual DI and, babel, and linting
+config.module.loaders.push({
+  test: /\.js$/,
+  loader: 'strip-loader?strip[]=debug,strip[]=console.log!ng-annotate!'
+    +'babel-loader!eslint-loader'
+});
+
 // Minify js without mangling globals
 config.plugins.push(new webpack.optimize.UglifyJsPlugin({
   mangle: {
@@ -37,4 +44,4 @@ config.plugins.push(new webpack.optimize.UglifyJsPlugin({
   }
 }));
 
-export default config
+export default config;
