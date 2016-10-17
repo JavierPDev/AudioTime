@@ -32,6 +32,7 @@ export default {
     new HtmlWebpackPlugin({
       template: path.resolve('./src/index.html'),
       filename: 'index.html',
+      favicon: 'favicon.ico',
       inject: 'body',
       hash: true
     }),
