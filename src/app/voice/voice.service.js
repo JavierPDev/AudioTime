@@ -12,6 +12,11 @@ export default class VoiceService {
       }
     };
     this._annyang.addCommands(this._commands);
+
+    let voices = speechSynthesis.getVoices();
+    this._speechMsg = new SpeechSynthesisUtterance();
+    this._speechMsg.lang = 'en-US';
+    this._speechMsg.voice = voices[1];
   }
 
   listen() {
@@ -22,5 +27,10 @@ export default class VoiceService {
   stopListening() {
     console.log('service:stopListening');
     this._annyang.abort();
+  }
+
+  speak(phrase) {
+    this._speechMsg.text = phrase;
+    window.speechSynthesis.speak(this._speechMsg);
   }
 }

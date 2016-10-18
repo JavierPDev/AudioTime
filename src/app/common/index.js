@@ -1,4 +1,7 @@
-import Timekeeper from './timekeeper';
+import TimekeeperService from './timekeeper.service';
 
-export { Timekeeper };
+export function timekeeperService(appModule) {
+  appModule.service('timekeeperService', TimekeeperService);
+}
 
+export {TimekeeperService};

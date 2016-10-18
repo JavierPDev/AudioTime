@@ -1,5 +1,5 @@
-import { Timekeeper } from '../common';
+import { TimekeeperService } from '../common';
 
-export default class TimerService extends Timekeeper {
+export default class TimerService extends TimekeeperService {
 }
 

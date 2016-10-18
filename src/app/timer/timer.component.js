@@ -9,13 +9,31 @@ export default function TimerComponent(appModule) {
 }
 
 class TimerController {
-  constructor(timerService) {
+  constructor(timerService, voiceService) {
     'ngInject';
 
-    this.timerService = timerService;
+    this._timerService = timerService;
+    this._voiceService = voiceService;
+  }
+
+  /**
+   * Set component's time using seconds
+   * @param {Number} secs - Seconds
+   */
+  setTime(secs) {
+    this.time = this._timerService.format(secs);
   }
 
   $onInit() {
-    this.time = this.timerService.time;
+    this.time = this._timerService.time;
+  }
+
+  $onDestroy() {
+    this._timerService.time = this.time;
+  }
+  
+  speak() {
+    console.log('phrase', this.phrase);
+    this._voiceService.speak(this.phrase);
   }
 }

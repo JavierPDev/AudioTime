@@ -1,6 +1,7 @@
 export default class TimekeeperService {
-  constructor() {
+  constructor(voiceService) {
     this.time = this.format(0);
+    this._voiceService = voiceService;
   }
 
   reset() {

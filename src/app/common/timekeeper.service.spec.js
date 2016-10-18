@@ -1,10 +1,10 @@
-import { Timekeeper } from './';
+import { TimekeeperService } from './';
 
 describe('Timekeeper superclass', () => {
   let timekeeper;
 
   beforeEach(() => {
-    timekeeper = new Timekeeper();
+    timekeeper = new TimekeeperService();
   });
 
   it('initializes time to 0:00', () => {

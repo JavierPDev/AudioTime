@@ -5,3 +5,8 @@
     {{$ctrl.time}}
   </div>
 </div>
+
+<form ng-submit-"$ctrl.speak()">
+  <input ng-model="$ctrl.phrase">
+  <button class="button" ng-click="$ctrl.speak()">Speak</button>
+</form>
