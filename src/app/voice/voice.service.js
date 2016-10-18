@@ -15,6 +15,7 @@ export default class VoiceService {
 
     let voices = speechSynthesis.getVoices();
     this._speechMsg = new SpeechSynthesisUtterance();
+    this._speechMsg.rate = 1.5;
     this._speechMsg.lang = 'en-US';
     this._speechMsg.voice = voices[1];
   }

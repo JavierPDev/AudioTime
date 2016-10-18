@@ -1,11 +1,11 @@
 export default class TimekeeperService {
   constructor(voiceService) {
-    this.time = this.format(0);
+    this.time = 0;
     this._voiceService = voiceService;
   }
 
   reset() {
-    this.time = this.format(0);
+    this.time = 0;
   }
 
   /**
@@ -16,7 +16,8 @@ export default class TimekeeperService {
   format(secs) {
     let mins = Math.floor(secs / 60) || '0';
     let secsBasic = secs - mins * 60;
-    let secsLeadingZero = secsBasic.length === 1 ? '0' + secsBasic : secsBasic;
+    let secsLeadingZero = secsBasic.toString().length === 1 
+      ? '0' + secsBasic : secsBasic;
     let secsFinal = secsLeadingZero ? secsLeadingZero : '00';
     return `${mins}:${secsFinal}`;
   }
@@ -26,6 +27,6 @@ export default class TimekeeperService {
    * @param {Number} secs - Time in seconds
    */
   set(secs) {
-    this.time = this.format(secs);
+    this.time = secs;
   }
 }

@@ -1,12 +1,24 @@
 <h3>Timer</h3>
 
-<div class="time">
+<div class="time"
+  ng-class="{
+      'time--active': $ctrl.running && !$ctrl.cleared,
+      'time--paused': !$ctrl.running && !$ctrl.cleared
+    }">
   <div class="time__display">
     {{$ctrl.time}}
   </div>
 </div>
 
-<form ng-submit-"$ctrl.speak()">
-  <input ng-model="$ctrl.phrase">
-  <button class="button" ng-click="$ctrl.speak()">Speak</button>
-</form>
+<div>
+  <button class="button success"
+    ng-if="!$ctrl.running"
+    ng-click="$ctrl.start()">
+    {{ $ctrl.cleared ? 'Start' : 'Resume' }}
+  </button>
+  <button class="button alert"
+    ng-if="$ctrl.running"
+    ng-click="$ctrl.pause()">
+    Pause
+  </button>
+</div>
