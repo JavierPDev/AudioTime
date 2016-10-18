@@ -1,13 +1,14 @@
 [![Build Status](https://travis-ci.org/JavierPDev/AudioTime.svg?branch=master)](https://travis-ci.org/JavierPDev/AudioTime)
 
 # Audio Time
-Timer voice web app. No seed project or generator used. Project uses component based thinking for design and development.
+Timer voice web app. No seed project or generator used. Project uses component based thinking for design and development. Chrome's native speech api is used so chrome is needed to run the web app.
 
 ### Tools used:
 * ES6
 * Webpack
 * Angularjs
 * Annyang
+* Webkit speech API
 * Foundation
 * Angular-foundation
 * Babel
