@@ -9,6 +9,7 @@
     "build": "webpack --config webpack.prod.config.babel.js",
     "lint": "eslint .",
     "test": "npm run test.unit && npm run test.e2e.prod",
+    "test.dev": "npm run test.unit && npm run test.e2e.dev",
     "test.unit": "karma start",
     "testd.unit": "karma start --auto-watch --no-single-run",
     "test.e2e.dev": "concurrently -k -s \"first\" \"npm start\" \"npm run protractor\"",
