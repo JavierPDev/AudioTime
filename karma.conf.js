@@ -44,7 +44,6 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       './src/index.js': ['webpack'],
-      './node_modules/angular-mocks/angular-mocks.js': ['webpack'],
       './src/**/*.spec.js': ['webpack']
     },
 
