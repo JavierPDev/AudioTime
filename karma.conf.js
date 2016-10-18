@@ -4,6 +4,7 @@ require('babel-register');
 var webpackConfig = require('./webpack.dev.config.babel.js');
 var browsers = process.env.TRAVIS ? ['Chrome_travis_ci'] : ['Chrome'];
 webpackConfig.entry = {};
+webpackConfig.devtool = 'inline-source-map';
 
 module.exports = function(config) {
   config.set({
@@ -15,7 +16,8 @@ module.exports = function(config) {
     plugins: [
       require('karma-chrome-launcher'),
       require('karma-jasmine'),
-      require('karma-webpack')
+      require('karma-webpack'),
+      require('karma-sourcemap-loader')
     ],
 
     // frameworks to use
@@ -43,8 +45,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      './src/index.js': ['webpack'],
-      './src/**/*.spec.js': ['webpack']
+      './src/index.js': ['webpack', 'sourcemap'],
+      './src/**/*.spec.js': ['webpack', 'sourcemap']
     },
 
     webpack: webpackConfig,
