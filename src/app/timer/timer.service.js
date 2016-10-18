@@ -16,10 +16,8 @@ export default class TimerService {
     let mins = Math.floor(secs / 60) || '0';
     let secsBasic = secs - mins * 60;
     let secsLeadingZero = secsBasic.length === 1 ? '0' + secsBasic : secsBasic;
-    if (!secsLeadingZero) {
-      secsLeadingZero = '00';
-    }
-    return `${mins}:${secsLeadingZero}`;
+    let secsFinal = secsLeadingZero ? secsLeadingZero : '00';
+    return `${mins}:${secsFinal}`;
   }
 
   /**
