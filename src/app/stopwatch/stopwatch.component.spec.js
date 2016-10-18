@@ -8,6 +8,7 @@ describe('StopwatchComponent', () => {
     scope = $rootScope.$new();
     ctrl = $componentController('atStopwatch', {$scope: scope});
     voiceService = _voiceService_;
+    ctrl.$onInit();
   }));
 
   describe('controller', () => {

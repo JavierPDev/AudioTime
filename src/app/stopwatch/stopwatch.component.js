@@ -12,8 +12,11 @@ class StopwatchController {
   constructor(voiceService) {
     'ngInject';
 
-    this.listening = false;
     this._voiceService = voiceService;
+  }
+
+  $onInit() {
+    this.listening = false;
   }
 
   listen() {

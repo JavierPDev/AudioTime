@@ -13,6 +13,9 @@ class TimerController {
     'ngInject';
 
     this.timerService = timerService;
-    this.time = timerService.time;
+  }
+
+  $onInit() {
+    this.time = this.timerService.time;
   }
 }

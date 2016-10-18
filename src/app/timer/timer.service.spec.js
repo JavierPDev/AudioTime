@@ -6,10 +6,6 @@ describe('timerService', () => {
     timerService = _timerService_;
   }));
 
-  it('exists', () => {
-    expect(timerService).toBeDefined();
-  });
-
   it('initializes time to 0:00', () => {
     expect(timerService.time).toBe('0:00');
   });

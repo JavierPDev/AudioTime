@@ -8,6 +8,7 @@ describe('TimerComponent', () => {
     scope = $rootScope.$new();
     ctrl = $componentController('atTimer', {$scope: scope});
     timerService = _timerService_;
+    ctrl.$onInit();
   }));
 
   describe('controller', () => {
