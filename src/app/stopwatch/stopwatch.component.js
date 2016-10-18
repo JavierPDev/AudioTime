@@ -57,5 +57,6 @@ class StopwatchController {
 
   $onDestroy() {
     this._stopwatchService.time = this._timeSecs;
+    this._$interval.cancel(this._intervalPromise);
   }
 }
