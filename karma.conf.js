@@ -15,7 +15,6 @@ module.exports = function(config) {
     plugins: [
       require('karma-chrome-launcher'),
       require('karma-jasmine'),
-      require('karma-babel-preprocessor'),
       require('karma-webpack')
     ],
 
@@ -45,7 +44,8 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       './src/index.js': ['webpack'],
-      './src/**/*.spec.js': ['babel']
+      './node_modules/angular-mocks/angular-mocks.js': ['webpack'],
+      './src/**/*.spec.js': ['webpack']
     },
 
     webpack: webpackConfig,

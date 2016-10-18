@@ -3,7 +3,7 @@ describe('StopwatchComponent', () => {
   let scope;
   let voiceService;
 
-  beforeEach(module('app'));
+  beforeEach(angular.mock.module('app'));
   beforeEach(inject(($rootScope, $componentController, _voiceService_) => {
     scope = $rootScope.$new();
     ctrl = $componentController('atStopwatch', {$scope: scope});

@@ -2,7 +2,7 @@ describe('AboutComponent', () => {
   let element;
   let scope;
 
-  beforeEach(module('app'));
+  beforeEach(angular.mock.module('app'));
   beforeEach(inject(($rootScope, $compile) => {
     scope = $rootScope.$new();
     element = angular.element(`<at-about></at-about>`);

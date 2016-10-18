@@ -3,7 +3,7 @@ describe('TimerComponent', () => {
   let scope;
   let timerService;
 
-  beforeEach(module('app'));
+  beforeEach(angular.mock.module('app'));
   beforeEach(inject(($rootScope, $componentController, _timerService_) => {
     scope = $rootScope.$new();
     ctrl = $componentController('atTimer', {$scope: scope});

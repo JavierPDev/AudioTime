@@ -1,7 +1,7 @@
 describe('voiceService', () => {
   let voiceService;
 
-  beforeEach(module('app'));
+  beforeEach(angular.mock.module('app'));
   beforeEach(inject((_voiceService_) => {
     voiceService = _voiceService_;
   }));
