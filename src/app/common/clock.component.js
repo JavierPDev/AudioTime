@@ -6,6 +6,8 @@ export default function ClockComponent(appModule) {
     template: template,
     controller: ClockController,
     bindings: {
+      cleared: '<',
+      running: '<',
       time: '<'
     }
   });

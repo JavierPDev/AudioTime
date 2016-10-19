@@ -1,6 +1,10 @@
 <div class="time-container">
   <div class="panel">
-    <at-clock time="$ctrl.time"></at-clock>
+    <at-clock
+      cleared="$ctrl.cleared"
+      running="$ctrl.running"
+      time="$ctrl.time">
+    </at-clock>
     <div class="time-controls ">
       <button class="button success"
         ng-if="!$ctrl.running"
