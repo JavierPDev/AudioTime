@@ -46,7 +46,3 @@ npm run test.e2e.dev
 # Run end-to-end tests in production mode. Slower than dev but more accurate for end user experience.
 npm run test.e2e.prod
 ```
-
-###### Known Issues
-
-* Foundation CSS is loaded after app-specific CSS. [This is a common problem with webpack and some its loaders/plugins](https://github.com/webpack/webpack/issues/215).
