@@ -1,6 +1,8 @@
 import TimekeeperService from './timekeeper.service';
+import ClockComponent from './clock.component';
 
-export function timekeeperService(appModule) {
+export function common(appModule) {
+  ClockComponent(appModule);
   appModule.service('timekeeperService', TimekeeperService);
 }
 

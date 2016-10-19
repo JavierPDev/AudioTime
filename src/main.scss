@@ -1,9 +1,15 @@
 @import 'vendor';
 @import 'variables';
 
-.center-of-page {
+.center-of-viewport {
   font-size: 2vw;
   left: 49%;
   position: absolute;
   top: 49%;
 }
+
+.time-container {
+  margin: 30px auto;
+  width: 320px;
+}
+

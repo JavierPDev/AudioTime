@@ -1,0 +1,22 @@
+// Used by both timer and stopwatch
+.clock {
+  background-color: #fff;
+  border: 3px solid #000;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 44px;
+  margin-top: 30px;
+  padding: 95px;
+}
+
+.clock--active {
+  border-color: green;
+  color: green;
+}
+
+.clock--paused {
+  border-color: red;
+  color: red;
+}
+
+

@@ -3,6 +3,7 @@ import 'angular-ui-router';
 import 'angular-foundation';
 
 import { app, router } from './app';
+import { common } from './app/common';
 import about from './app/about';
 import stopwatch from './app/stopwatch';
 import timer from './app/timer';
@@ -15,6 +16,7 @@ let appModule = angular.module('app', [
 ]);
 
 app(appModule);
+common(appModule);
 about(appModule);
 stopwatch(appModule);
 timer(appModule);

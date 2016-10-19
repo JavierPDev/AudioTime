@@ -1,15 +1,6 @@
 <div class="time-container">
   <div class="panel">
-    <div class="time"
-      ng-class="{
-          'time--active': $ctrl.running && !$ctrl.cleared,
-          'time--paused': !$ctrl.running && !$ctrl.cleared
-        }">
-      <div class="time__display">
-        {{$ctrl.time}}
-      </div>
-    </div>
-
+    <at-clock formatted-time="$ctrl.time"></at-clock>
     <div class="time-controls ">
       <button class="button success"
         ng-if="!$ctrl.running"

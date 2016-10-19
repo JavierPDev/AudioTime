@@ -1,0 +1,9 @@
+<div class="clock"
+  ng-class="{
+      'clock--active': $ctrl.running && !$ctrl.cleared,
+      'clock--paused': !$ctrl.running && !$ctrl.cleared
+    }">
+  <div class="clock__display">
+    {{$ctrl.formattedTime}}
+  </div>
+</div>
