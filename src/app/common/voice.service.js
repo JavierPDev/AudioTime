@@ -1,20 +1,46 @@
-import annyang from 'annyang';
-
 export default class VoiceService {
-  constructor($filter) {
+  constructor($filter, $rootScope) {
     'ngInject';
-    this._annyang = annyang;
     this._$filter = $filter;
-    this._commands = {
-      'blue': () => {
-        document.body.style.background = 'blue';
-      },
-      'red': () => {
-        document.body.style.background = 'red';
-      }
-    };
-    this._annyang.addCommands(this._commands);
+    this._$rootScope = $rootScope;
+    
+    this._setupRecognition();
+    this._setupTextToSpeech();
+  }
 
+  /**
+   * Set up voice recognition process using webkit's api
+   */
+  _setupRecognition() {
+    let initRecog = () => {
+      console.log('init recog');
+      this._recognitionResultIndex = 0;
+      this._recognition = new webkitSpeechRecognition();
+      this._recognition.continuous = true;
+      this._recognition.onresult = (event) => {
+        let msg = event.results[this._recognitionResultIndex++][0].transcript;
+        let command;
+        if (/star/i.test(msg)) {
+          command = 'start';
+        }
+        if (/paul|paws|stop/i.test(msg)) {
+          command = 'pause';
+        }
+        this._$rootScope.$broadcast('recognition.incoming', command);
+        document.querySelector('#recog').innerHTML += '<br>'+msg;
+      };
+      this._recognition.onend = (event) => {
+        initRecog();
+        this.listen();
+      };
+    };
+    initRecog();
+  }
+
+  /**
+   * Set up text to speech process using webkit's api
+   */
+  _setupTextToSpeech() {
     let voices = speechSynthesis.getVoices();
     this._speechMsg = new SpeechSynthesisUtterance();
     this._speechMsg.rate = 2.5;
@@ -23,13 +49,14 @@ export default class VoiceService {
   }
 
   listen() {
+    this._recognition.start();
     console.log('service:listening');
-    this._annyang.start();
+
   }
 
   stopListening() {
+    this._recognition.stop();
     console.log('service:stopListening');
-    this._annyang.abort();
   }
 
   speak(phrase) {

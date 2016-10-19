@@ -9,11 +9,12 @@ export default function StopwatchComponent(appModule) {
 }
 
 class StopwatchController {
-  constructor($filter, $interval, stopwatchService, voiceService) {
+  constructor($filter, $interval, $scope, stopwatchService, voiceService) {
     'ngInject';
 
     this._$filter = $filter;
     this._$interval = $interval;
+    this._$scope = $scope;
     this._stopwatchService = stopwatchService;
     this._voiceService = voiceService;
   }
@@ -44,9 +45,21 @@ class StopwatchController {
     this.time = this._stopwatchService.time;
     this.running = false;
     this.cleared = true;
+    this._voiceService.listen();
+    this._unlistenRecognition = this._$scope.$on('recognition.incoming',
+        (event, command) => {
+      if (command === 'start') {
+        this.start();
+      }
+      if (command === 'pause') {
+        this.pause();
+      }
+    });
   }
 
   $onDestroy() {
+    this._unlistenRecognition();
+    this._voiceService.stopListening();
     this._stopwatchService.time = this.time;
     this._$interval.cancel(this._intervalPromise);
   }
