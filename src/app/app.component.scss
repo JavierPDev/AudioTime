@@ -20,12 +20,18 @@ div.move-right a.exit-off-canvas {
 
 // Used by both timer and stopwatch
 .time {
+  background-color: #fff;
   border: 3px solid #000;
   border-radius: 50%;
-  cursor: pointer;
   display: inline-block;
-  font-size: 24px;
-  padding: 20px;
+  font-size: 44px;
+  margin-top: 30px;
+  padding: 95px;
+}
+
+.time-container {
+  margin: 30px auto;
+  width: 320px;
 }
 
 .time--active {
@@ -36,4 +42,9 @@ div.move-right a.exit-off-canvas {
 .time--paused {
   border-color: red;
   color: red;
+}
+
+.time-controls {
+  margin-left: 95px;
+  margin-top: 30px;
 }

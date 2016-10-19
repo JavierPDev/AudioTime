@@ -31,10 +31,10 @@ class StopwatchController {
     this._intervalPromise = this._$interval(() => {
       this._timeSecs++;
       this._setTime(this._timeSecs);
-      if (this._timeSecs === 1 || this._timeSecs % 10 === 0) {
+      // if (this._timeSecs === 1 || this._timeSecs % 10 === 0) {
         let phrase = this._timeSecs < 60 ? this._timeSecs : this.time;
         this._voiceService.speak(phrase);
-      }
+      // }
     }, 1000);
   }
 

@@ -1,24 +1,26 @@
-<h3>Stopwatch</h3>
+<div class="time-container">
+  <div class="panel">
+    <div class="time"
+      ng-class="{
+          'time--active': $ctrl.running && !$ctrl.cleared,
+          'time--paused': !$ctrl.running && !$ctrl.cleared
+        }">
+      <div class="time__display">
+        {{$ctrl.time}}
+      </div>
+    </div>
 
-<div class="time"
-  ng-class="{
-      'time--active': $ctrl.running && !$ctrl.cleared,
-      'time--paused': !$ctrl.running && !$ctrl.cleared
-    }">
-  <div class="time__display">
-    {{$ctrl.time}}
+    <div class="time-controls ">
+      <button class="button success"
+        ng-if="!$ctrl.running"
+        ng-click="$ctrl.start()">
+        {{ $ctrl.cleared ? 'Start' : 'Resume' }}
+      </button>
+      <button class="button alert"
+        ng-if="$ctrl.running"
+        ng-click="$ctrl.pause()">
+        Pause
+      </button>
+    </div>
   </div>
-</div>
-
-<div>
-  <button class="button success"
-    ng-if="!$ctrl.running"
-    ng-click="$ctrl.start()">
-    {{ $ctrl.cleared ? 'Start' : 'Resume' }}
-  </button>
-  <button class="button alert"
-    ng-if="$ctrl.running"
-    ng-click="$ctrl.pause()">
-    Pause
-  </button>
 </div>
