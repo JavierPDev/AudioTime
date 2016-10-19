@@ -4,6 +4,6 @@
       'clock--paused': !$ctrl.running && !$ctrl.cleared
     }">
   <div class="clock__display">
-    {{$ctrl.formattedTime}}
+    {{$ctrl.time | formatTime}}
   </div>
 </div>
