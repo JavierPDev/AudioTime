@@ -24,8 +24,7 @@ class StopwatchController {
     this._intervalPromise = this._$interval(() => {
       this.time++;
       // if (this.time === 1 || this.time % 10 === 0) {
-        let phrase = this.time < 60 ? this.time
-          : this._$filter('formatTime')(this.time);
+        let phrase = this._voiceService.getTimePhrase(this.time);
         this._voiceService.speak(phrase);
       // }
     }, 1000);
