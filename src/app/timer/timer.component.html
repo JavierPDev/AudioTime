@@ -18,6 +18,7 @@
     <div class="time-controls ">
       <button class="button success"
         ng-if="!$ctrl.running"
+        ng-disabled="$ctrl.secInput === undefined || $ctrl.minInput === undefined"
         ng-click="$ctrl.start()">
         {{ $ctrl.cleared ? 'Start' : 'Resume' }}
       </button>
