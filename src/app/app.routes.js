@@ -1,5 +1,7 @@
 export default function(appModule) {
-  appModule.config(function($stateProvider, $locationProvider) {
+  appModule.config(function(
+        $stateProvider, $locationProvider, $urlRouterProvider
+      ) {
     'ngInject';
 
     $stateProvider
@@ -19,6 +21,7 @@ export default function(appModule) {
         component: 'atAbout'
       });
 
+    $urlRouterProvider.otherwise('/stopwatch');
     $locationProvider.html5Mode(true);
   });
 }
