@@ -8,16 +8,16 @@ describe('TimerComponent', () => {
     timerPage.getPage();
   });
 
-  it('stop listening button appears when listen button clicked', () => {
-    timerPage.listen();
-    expect(timerPage.listenBtn.isPresent()).toBe(false);
-    expect(timerPage.stopListeningBtn.isDisplayed()).toBe(true);
+  it('pause button appears when start button clicked', () => {
+    timerPage.start();
+    expect(timerPage.startButton.isPresent()).toBe(false);
+    expect(timerPage.pauseButton.isDisplayed()).toBe(true);
   });
   
-  it('listen button appears when stop listening button clicked', () => {
-    timerPage.listen();
-    expect(timerPage.listenBtn.isPresent()).toBe(false);
-    timerPage.stopListening();
-    expect(timerPage.listenBtn.isDisplayed()).toBe(true);
+  it('start button appears when pause button clicked', () => {
+    timerPage.start();
+    expect(timerPage.startButton.isPresent()).toBe(false);
+    timerPage.pause();
+    expect(timerPage.startButton.isDisplayed()).toBe(true);
   });
 });

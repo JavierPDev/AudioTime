@@ -8,7 +8,16 @@ describe('StopwatchComponent', () => {
     stopwatchPage.getPage();
   });
 
-  it('placeholder', () => {
-    expect(true).toBe(true);
+  it('pause button appears when start button clicked', () => {
+    stopwatchPage.start();
+    expect(stopwatchPage.startButton.isPresent()).toBe(false);
+    expect(stopwatchPage.pauseButton.isDisplayed()).toBe(true);
+  });
+  
+  it('start button appears when pause button clicked', () => {
+    stopwatchPage.start();
+    expect(stopwatchPage.startButton.isPresent()).toBe(false);
+    stopwatchPage.pause();
+    expect(stopwatchPage.startButton.isDisplayed()).toBe(true);
   });
 });
