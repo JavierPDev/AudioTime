@@ -1,3 +1,4 @@
+import { TimekeeperController } from '../common';
 import template from './timer.component.html';
 import './timer.component.scss';
 
@@ -8,26 +9,17 @@ export default function TimerComponent(appModule) {
   });
 }
 
-class TimerController {
-  constructor(voiceService) {
+class TimerController extends TimekeeperController {
+  constructor($filter, $interval, $scope, stopwatchService, voiceService) {
     'ngInject';
-
-    this._voiceService = voiceService;
+    super(...arguments);
   }
 
-  $onInit() {
-    this.listening = false;
-  }
-
-  listen() {
-    console.log('component:listening');
-    this.listening = true;
-    this._voiceService.listen();
-  }
-
-  stopListening() {
-    console.log('component:stopListening');
-    this.listening = false;
-    this._voiceService.stopListening();
+  _intervalFn() {
+    this.time++;
+    // if (this.time === 1 || this.time % 10 === 0) {
+      let phrase = this._voiceService.getTimePhrase(this.time);
+      this._voiceService.speak(phrase);
+    // }
   }
 }

@@ -1,12 +1,21 @@
-<h3>Timer</h3>
-
-<button class="button success"
-  ng-if="!$ctrl.listening"
-  ng-click="$ctrl.listen()">
-  Listen
-</button>
-<button class="button alert"
-  ng-if="$ctrl.listening"
-  ng-click="$ctrl.stopListening()">
-  Stop Listening
-</button>
+<div class="time-container">
+  <div class="panel">
+    <at-clock
+      cleared="$ctrl.cleared"
+      running="$ctrl.running"
+      time="$ctrl.time">
+    </at-clock>
+    <div class="time-controls ">
+      <button class="button success"
+        ng-if="!$ctrl.running"
+        ng-click="$ctrl.start()">
+        {{ $ctrl.cleared ? 'Start' : 'Resume' }}
+      </button>
+      <button class="button alert"
+        ng-if="$ctrl.running"
+        ng-click="$ctrl.pause()">
+        Pause
+      </button>
+    </div>
+  </div>
+</div>
