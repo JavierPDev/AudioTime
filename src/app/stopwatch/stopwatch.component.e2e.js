@@ -5,7 +5,6 @@ describe('StopwatchComponent', () => {
 
   beforeEach(() => {
     stopwatchPage = new StopwatchPage();
-    stopwatchPage.getPage();
   });
 
   it('pause button appears when start button clicked', () => {
