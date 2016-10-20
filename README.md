@@ -1,10 +1,10 @@
 [![Build Status](https://travis-ci.org/JavierPDev/AudioTime.svg?branch=master)](https://travis-ci.org/JavierPDev/AudioTime)
 
 # Audio Time
-Timer and stopwatch voice/audio web app. No seed project or generator used. Project uses component based thinking for design and development. Chrome's native speech api is used so chrome is needed to run the web app.
+Timer and stopwatch voice/audio web app. No seed project or generator used. Project uses component based thinking for design and development. Webkit's native speech api is used so Chrome is needed to run the web app.
 
 ### Tools used:
-* ES6
+* ES6 (through Babel)
 * Webpack
 * Angularjs
 * Webkit speech recognition API
@@ -16,6 +16,7 @@ Timer and stopwatch voice/audio web app. No seed project or generator used. Proj
 * Karma test runner
 * Jasmine testing framework
 * Protractor end-to-end testing framework for Angularjs
+* Travis CI
 
 ### Instructions
 ```bash
@@ -25,14 +26,14 @@ npm install
 # Start app in development server
 npm start
 
+# Run unit tests and end-to-end tests in production mode
+npm test
+
 # Build app into /dist directory
 npm run build
 
 # Run server using production files in /dist
 npm run server.prod
-
-# Run unit tests and end-to-end tests in production mode
-npm test
 
 # Run unit tests
 npm run test.unit
