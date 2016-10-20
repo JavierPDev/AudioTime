@@ -22,15 +22,14 @@ export default class VoiceService {
         if (/star|art|park|cars/i.test(msg)) {
           command = 'start';
         }
-        if (/paws|paul|stop|stock|stuff|spa|bob/i.test(msg)) {
+        if (/paws|paul|op|stock|stuff|spa|bob/i.test(msg)) {
           command = 'pause';
         }
         this._$rootScope.$broadcast('recognition.incoming', command);
-        console.log(`Latest speech phrase: '${msg}' Parsed command: '${command}'`);
+        console.log(`Latest speech phrase: '${msg}' Parsed command: ${command}`);
       };
       this._recognition.onend = (event) => {
         initRecog();
-        this.listen();
       };
     };
     initRecog();

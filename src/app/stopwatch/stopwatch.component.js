@@ -11,7 +11,6 @@ export default function StopwatchComponent(appModule) {
 class StopwatchController {
   constructor($filter, $interval, $scope, stopwatchService, voiceService) {
     'ngInject';
-
     this._$filter = $filter;
     this._$interval = $interval;
     this._$scope = $scope;
