@@ -5,6 +5,16 @@
       running="$ctrl.running"
       time="$ctrl.time">
     </at-clock>
+    <div class="time-inputs">
+      <input type="number" class="time-input" placeholder="mm"
+        ng-min="0"
+        ng-model="$ctrl.minInput"
+        ng-change="$ctrl.changeTime()">
+      <input type="number" class="time-input" placeholder="ss"
+        ng-min="0" ng-max="59"
+        ng-model="$ctrl.secInput"
+        ng-change="$ctrl.changeTime()">
+    </div>
     <div class="time-controls ">
       <button class="button success"
         ng-if="!$ctrl.running"

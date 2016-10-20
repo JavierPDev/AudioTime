@@ -15,8 +15,24 @@ class TimerController extends TimekeeperController {
     super(...arguments);
   }
 
+  changeTime() {
+    this.time = this.minInput * 60 + this.secInput;
+  }
+
+  reset() {
+    super.reset();
+    this.minInput = undefined;
+    this.secInput = undefined;
+  }
+
   _intervalFn() {
-    this.time++;
+    if (this.time <= 0) {
+      this.time = 0;
+      this.pause();
+      this.reset();
+      return;
+    }
+    this.time--;
     // if (this.time === 1 || this.time % 10 === 0) {
       let phrase = this._voiceService.getTimePhrase(this.time);
       this._voiceService.speak(phrase);
