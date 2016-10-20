@@ -10,7 +10,7 @@ export default function TimerComponent(appModule) {
 }
 
 class TimerController extends TimekeeperController {
-  constructor($filter, $interval, $scope, stopwatchService, voiceService) {
+  constructor($filter, $interval, $scope, timerService, voiceService) {
     'ngInject';
     super(...arguments);
   }
