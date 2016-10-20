@@ -32,8 +32,8 @@ class StopwatchController {
   }
 
   pause() {
-    this._$interval.cancel(this._intervalPromise);
     this.running = false;
+    this._$interval.cancel(this._intervalPromise);
   }
 
   reset() {

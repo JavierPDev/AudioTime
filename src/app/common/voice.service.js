@@ -13,21 +13,20 @@ export default class VoiceService {
    */
   _setupRecognition() {
     let initRecog = () => {
-      console.log('init recog');
       this._recognitionResultIndex = 0;
       this._recognition = new webkitSpeechRecognition();
       this._recognition.continuous = true;
       this._recognition.onresult = (event) => {
         let msg = event.results[this._recognitionResultIndex++][0].transcript;
         let command;
-        if (/star/i.test(msg)) {
+        if (/star|art|park|cars/i.test(msg)) {
           command = 'start';
         }
-        if (/paul|paws|stop/i.test(msg)) {
+        if (/paws|paul|stop|stock|stuff|spa|bob/i.test(msg)) {
           command = 'pause';
         }
         this._$rootScope.$broadcast('recognition.incoming', command);
-        document.querySelector('#recog').innerHTML += '<br>'+msg;
+        console.log(`Latest speech phrase: '${msg}' Parsed command: '${command}'`);
       };
       this._recognition.onend = (event) => {
         initRecog();
@@ -50,13 +49,10 @@ export default class VoiceService {
 
   listen() {
     this._recognition.start();
-    console.log('service:listening');
-
   }
 
   stopListening() {
     this._recognition.stop();
-    console.log('service:stopListening');
   }
 
   speak(phrase) {
