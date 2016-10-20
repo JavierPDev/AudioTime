@@ -21,7 +21,7 @@ export default class TimekeeperController {
   }
 
   reset() {
-    this._pause();
+    this.pause();
     this.cleared = true;
   }
 
