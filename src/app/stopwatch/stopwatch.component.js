@@ -21,13 +21,15 @@ class StopwatchController {
   start() {
     this.running = true;
     this.cleared = false;
-    this._intervalPromise = this._$interval(() => {
-      this.time++;
-      // if (this.time === 1 || this.time % 10 === 0) {
-        let phrase = this._voiceService.getTimePhrase(this.time);
-        this._voiceService.speak(phrase);
-      // }
-    }, 1000);
+    this._intervalPromise = this._$interval(this._intervalFn.bind(this), 1000);
+  }
+
+  _intervalFn() {
+    this.time++;
+    // if (this.time === 1 || this.time % 10 === 0) {
+      let phrase = this._voiceService.getTimePhrase(this.time);
+      this._voiceService.speak(phrase);
+    // }
   }
 
   pause() {
