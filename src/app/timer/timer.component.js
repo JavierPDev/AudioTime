@@ -32,10 +32,10 @@ class TimerController extends TimekeeperController {
       this.reset();
       return;
     }
-    this.time--;
     // if (this.time === 1 || this.time % 10 === 0) {
       let phrase = this._voiceService.getTimePhrase(this.time);
       this._voiceService.speak(phrase);
     // }
+    this.time--;
   }
 }
