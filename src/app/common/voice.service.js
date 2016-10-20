@@ -48,10 +48,12 @@ export default class VoiceService {
 
   listen() {
     this._recognition.start();
+    console.log('now listening');
   }
 
   stopListening() {
     this._recognition.stop();
+    console.log('stopped listening');
   }
 
   speak(phrase) {
