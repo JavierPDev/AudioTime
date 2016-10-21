@@ -23,6 +23,7 @@ export default class TimekeeperController {
   reset() {
     this.pause();
     this.cleared = true;
+    this.time = 0;
   }
 
   $onInit() {
