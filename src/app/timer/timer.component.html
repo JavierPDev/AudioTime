@@ -27,6 +27,11 @@
         ng-click="$ctrl.pause()">
         Pause
       </button>
+      <button class="button secondary"
+        ng-disabled="$ctrl.secInput === undefined || $ctrl.minInput === undefined"
+        ng-click="$ctrl.reset()">
+        Reset
+      </button>
     </div>
   </div>
 </div>
