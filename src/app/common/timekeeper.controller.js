@@ -38,21 +38,25 @@ export default class TimekeeperController {
     this.time = this._timekeeperService.time;
     this.running = false;
     this.cleared = true;
-    this._voiceService.listen();
-    this._unlistenRecognition = this._$scope.$on('recognition.incoming',
-        (event, command) => {
-      if (command === 'start') {
-        this.start();
-      }
-      if (command === 'pause') {
-        this.pause();
-      }
-    });
+    if (this._voiceService.setting === 'voice') {
+      this._voiceService.listen();
+      this._unlistenRecognition = this._$scope.$on('recognition.incoming',
+          (event, command) => {
+        if (command === 'start') {
+          this.start();
+        }
+        if (command === 'pause') {
+          this.pause();
+        }
+      });
+    }
   }
 
   $onDestroy() {
-    this._unlistenRecognition();
-    this._voiceService.stopListening();
+    if (this._voiceService.setting === 'voice') {
+      this._unlistenRecognition();
+      this._voiceService.stopListening();
+    }
     this._timekeeperService.time = this.time;
     this._$interval.cancel(this._intervalPromise);
   }
