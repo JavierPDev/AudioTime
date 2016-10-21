@@ -6,6 +6,8 @@ export default class VoiceService {
     
     this._setupRecognition();
     this._setupTextToSpeech();
+
+    this.setting = 'audio';
   }
 
   /**

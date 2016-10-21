@@ -16,6 +16,11 @@ export default function(appModule) {
         component: 'atTimer'
       })
       .state({
+        name: 'settings',
+        url: '/settings',
+        component: 'atSettings'
+      })
+      .state({
         name: 'about',
         url: '/about',
         component: 'atAbout'

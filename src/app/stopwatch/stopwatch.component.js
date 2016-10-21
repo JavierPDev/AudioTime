@@ -10,7 +10,8 @@ export default function StopwatchComponent(appModule) {
 }
 
 class StopwatchController extends TimekeeperController {
-  constructor($filter, $interval, $scope, stopwatchService, voiceService) {
+  constructor($filter, $interval, $scope, $timeout,
+      stopwatchService, voiceService) {
     'ngInject';
     super(...arguments);
   }

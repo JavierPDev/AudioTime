@@ -1,18 +1,26 @@
 export default class TimekeeperController {
-  constructor($filter, $interval, $scope, timekeeperService, voiceService) {
+  constructor($filter, $interval, $scope, $timeout,
+      timekeeperService, voiceService) {
     'ngInject';
     this._$filter = $filter;
     this._$interval = $interval;
     this._$scope = $scope;
+    this._$timeout = $timeout;
     this._timekeeperService = timekeeperService;
     this._voiceService = voiceService;
   }
 
   start() {
+    const context = this;
     this.running = true;
     this.cleared = false;
-    // _intervalFn to be implemented in child class
-    this._intervalPromise = this._$interval(this._intervalFn.bind(this), 1000);
+    if (this._timekeeperService.delay >= 0) {
+      this._$timeout(() => {
+        this._intervalPromise = this._$interval(this._intervalFn.bind(context), 1000);
+      }, 1000 * this._timekeeperService.delay);
+    } else {
+      this._intervalPromise = this._$interval(this._intervalFn.bind(context), 1000);
+    }
   }
 
   pause() {
