@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/JavierPDev/AudioTime.svg?branch=master)](https://travis-ci.org/JavierPDev/AudioTime)
 
 # Audio Time
-Timer and stopwatch voice/audio web app. No seed project or generator used. Project uses component based thinking for design and development. Webkit's native speech api is used so Chrome is needed to run the web app.
+Timer and stopwatch voice/audio web app. No seed project or generator used. Project uses component based thinking for design and development along with classical inheritance with es6. Webkit's native speech api is used so Chrome is needed to run the web app. Dependent on settings the stopwatch and timer will either use speech synthesis to count the time aloud, speech recognition to start and stop the stopwatch and timer using 'Start' and 'Stop' or 'Pause' commands, or do neither and function as normal stopwatch and timer. Check out the [live web app](http://audiotime.surge.sh).
 
 ### Tools used:
 * ES6 (through Babel)
