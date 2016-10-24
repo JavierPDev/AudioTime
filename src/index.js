@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import angular from 'angular';
 import 'angular-ui-router';
 import 'angular-foundation';
@@ -10,7 +11,7 @@ import stopwatch from './app/stopwatch';
 import timer from './app/timer';
 import './main.scss';
 
-let appModule = angular.module('app', [
+const appModule = angular.module('app', [
   'ui.router',
   'mm.foundation'
 ]);
