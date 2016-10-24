@@ -5,6 +5,8 @@ describe('TimerComponent', () => {
 
   beforeEach(() => {
     timerPage = new TimerPage();
+    timerPage.enterMin(10);
+    timerPage.enterSec(10);
   });
 
   it('pause button appears when start button clicked', () => {

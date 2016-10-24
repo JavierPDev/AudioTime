@@ -5,10 +5,6 @@ export default class TimerPage {
     this.pauseButton = element(by.css('.button.alert'));
     this.minInput = element(by.model('$ctrl.minInput'));
     this.secInput = element(by.model('$ctrl.secInput'));
-
-    // Enable button by entering numbers
-    this.minInput.sendKeys('00');
-    this.secInput.sendKeys('30');
   }
 
   start() {
@@ -17,5 +13,13 @@ export default class TimerPage {
 
   pause() {
     this.pauseButton.click();
+  }
+
+  enterMin(min) {
+    this.minInput.sendKeys(min);
+  }
+
+  enterSec(sec) {
+    this.secInput.sendKeys(sec);
   }
 }
