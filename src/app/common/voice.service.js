@@ -30,9 +30,15 @@ export default class VoiceService {
         this._$rootScope.$broadcast('recognition.incoming', command);
         console.log(`Latest speech phrase: '${msg}' Parsed command: ${command}`);
       };
+      this._recognition.onerror = (err) => {
+        console.error('recog error:', err);
+      };
       this._recognition.onend = (event) => {
         initRecog();
       };
+      if (this.setting === 'voice') {
+        this._recognition.start();
+      }
     };
     initRecog();
   }
