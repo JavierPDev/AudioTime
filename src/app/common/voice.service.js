@@ -8,6 +8,7 @@ export default class VoiceService {
     this._setupTextToSpeech();
 
     this.setting = 'audio';
+    this.interval = 1;
   }
 
   /**

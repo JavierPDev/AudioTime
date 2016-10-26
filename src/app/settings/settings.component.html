@@ -17,4 +17,19 @@
       </label>
     </div>
   </div>
+  <div class="row" ng-if="$ctrl.audioVoice === 'audio'">
+    <div class="small-12 columns">
+      <label>Interval between audio (when audio enabled)
+        <select ng-model="$ctrl.interval">
+          <option value="1">1 second</option>
+          <option value="5">5 seconds</option>
+          <option value="10">10 seconds</option>
+          <option value="15">15 seconds</option>
+          <option value="20">20 seconds</option>
+          <option value="30">30 seconds</option>
+          <option value="60">60 seconds</option>
+        </select>
+      </label>
+    </div>
+  </div>
 </form>

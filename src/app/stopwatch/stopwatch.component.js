@@ -18,7 +18,10 @@ class StopwatchController extends TimekeeperController {
 
   _intervalFn() {
     this.time++;
-    if (this._voiceService.setting === 'audio') {
+    const audioEnabled = this._voiceService.setting === 'audio';
+    const isInterval = this.time % this._voiceService.interval === 0
+      || this.time === 1;
+    if (audioEnabled && isInterval) {
       let phrase = this._voiceService.getTimePhrase(this.time);
       this._voiceService.speak(phrase);
     }

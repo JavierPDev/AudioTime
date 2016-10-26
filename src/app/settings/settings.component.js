@@ -18,12 +18,14 @@ class SettingsController {
 
   $onInit() {
     this.delay = this._stopwatchService.delay || this._timerService.delay;
+    this.interval = this._voiceService.interval;
     this.audioVoice = this._voiceService.setting;
   }
 
   $onDestroy() {
     this._stopwatchService.delay = this.delay;
     this._timerService.delay = this.delay;
+    this._voiceService.interval = this.interval;
     this._voiceService.setting = this.audioVoice;
   }
 }
