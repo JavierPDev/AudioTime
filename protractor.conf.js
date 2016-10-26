@@ -26,6 +26,8 @@ if (process.env.TRAVIS) {
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     'build': process.env.TRAVIS_BUILD_NUMBER
   };
+} else {
+  config.directConnect = true;
 }
 
 exports.config = config;
