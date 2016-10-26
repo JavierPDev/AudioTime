@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "webdriver-manager update",
     "start": "webpack-dev-server --config webpack.dev.config.babel.js -d --inline",
-    "build": "webpack --config webpack.prod.config.babel.js",
+    "build": "rm -rf ./dist && webpack --config webpack.prod.config.babel.js && cp ./src/manifest.json ./dist && cp -f ./dist/index.html ./dist/200.html",
     "lint": "eslint .",
     "test": "npm run test.unit && npm run test.e2e.prod",
     "test.dev": "npm run test.unit && npm run test.e2e.dev",
