@@ -1,6 +1,6 @@
 {
   "name": "AudioTime",
-  "version": "0.2.0",
+  "version": "0.2.5",
   "description": "Timer/stopwatch with voice",
   "main": "index.js",
   "scripts": {
