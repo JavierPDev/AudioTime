@@ -1,7 +1,7 @@
 export default class TimekeeperService {
   constructor(voiceService) {
     this.time = 0;
-    this.delay = 0;
+    this.delay = parseInt(localStorage.delay) || 0;
     this._voiceService = voiceService;
   }
 

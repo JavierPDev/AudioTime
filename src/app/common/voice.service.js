@@ -7,8 +7,8 @@ export default class VoiceService {
     this._setupRecognition();
     this._setupTextToSpeech();
 
-    this.setting = 'audio';
-    this.interval = 1;
+    this.setting = localStorage.audioVoice || 'audio';
+    this.interval = localStorage.interval || 1;
   }
 
   /**

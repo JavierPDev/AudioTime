@@ -27,5 +27,8 @@ class SettingsController {
     this._timerService.delay = this.delay;
     this._voiceService.interval = this.interval;
     this._voiceService.setting = this.audioVoice;
+    localStorage.delay = this.delay;
+    localStorage.interval = this.interval;
+    localStorage.audioVoice = this.audioVoice;
   }
 }
