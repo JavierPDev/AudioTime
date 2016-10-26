@@ -11,6 +11,7 @@ export default class TimekeeperController {
   }
 
   start() {
+    if (this.running) return;
     const context = this;
     this.running = true;
     this.cleared = false;
