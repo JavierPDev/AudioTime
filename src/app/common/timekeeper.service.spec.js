@@ -11,6 +11,10 @@ describe('Timekeeper superclass', () => {
     expect(timekeeper.time).toBe(0);
   });
 
+  it('initializes delay to 0', () => {
+    expect(timekeeper.delay).toBe(0);
+  });
+
   it('reset() sets time back to 0', () => {
     expect(timekeeper.time).toBe(0);
     timekeeper.set(60);
