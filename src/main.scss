@@ -3,9 +3,11 @@
 
 .center-of-viewport {
   font-size: 46px;
-  left: 49%;
-  position: absolute;
-  top: 49%;
+  left: 50%;
+  margin-left: -32px;
+  margin-top: -32px;
+  position: fixed;
+  top: 50%;
 }
 
 .time-container {
