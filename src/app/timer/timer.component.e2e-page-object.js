@@ -1,18 +1,33 @@
 export default class TimerPage {
   constructor() {
     browser.get('/timer');
-    this.startButton = element(by.css('.button.success'));
-    this.pauseButton = element(by.css('.button.alert'));
     this.minInput = element(by.model('$ctrl.minInput'));
     this.secInput = element(by.model('$ctrl.secInput'));
+    this.time = element(by.css('.clock__display'));
+  }
+
+  getStartButton() {
+    return element(by.css('.button.success'));
+  }
+
+  getPauseButton() {
+    return element(by.css('.button.alert'));
+  }
+
+  getResetButton() {
+    return element(by.css('.button.secondary'));
   }
 
   start() {
-    this.startButton.click();
+    this.getStartButton().click();
   }
 
   pause() {
-    this.pauseButton.click();
+    this.getPauseButton().click();
+  }
+
+  reset() {
+    this.getResetButton().click();
   }
 
   enterMin(min) {
