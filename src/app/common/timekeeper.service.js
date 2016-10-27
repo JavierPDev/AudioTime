@@ -1,8 +1,8 @@
 export default class TimekeeperService {
-  constructor(voiceService) {
+  constructor(speechService) {
     this.time = 0;
     this.delay = parseInt(localStorage.delay) || 0;
-    this._voiceService = voiceService;
+    this._speechService = speechService;
   }
 
   reset() {

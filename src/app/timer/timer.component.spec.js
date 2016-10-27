@@ -2,14 +2,14 @@ describe('TimerComponent', () => {
   let ctrl;
   let scope;
   let timerService;
-  let voiceService;
+  let speechService;
 
   beforeEach(angular.mock.module('app'));
   beforeEach(inject(($rootScope, $componentController,
-          _voiceService_, _timerService_) => {
+          _speechService_, _timerService_) => {
     scope = $rootScope.$new();
     ctrl = $componentController('atTimer', {$scope: scope});
-    voiceService = _voiceService_;
+    speechService = _speechService_;
     timerService = _timerService_;
     ctrl.$onInit();
   }));

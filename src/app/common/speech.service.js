@@ -1,4 +1,4 @@
-export default class VoiceService {
+export default class SpeechService {
   constructor($filter, $rootScope) {
     'ngInject';
     this._$filter = $filter;

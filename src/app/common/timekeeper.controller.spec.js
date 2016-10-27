@@ -4,15 +4,15 @@ describe('TimekeeperController', () => {
   let $rootScope;
   let ctrl;
   let timekeeperService;
-  let voiceService;
+  let speechService;
 
   beforeEach(angular.mock.module('app'));
   beforeEach(inject(($filter, $interval, _$rootScope_, $timeout,
-      _timekeeperService_, _voiceService_) => {
+      _timekeeperService_, _speechService_) => {
     ctrl = new TimekeeperController($filter, $interval, _$rootScope_.$new(),
-        $timeout, _timekeeperService_, _voiceService_);
+        $timeout, _timekeeperService_, _speechService_);
     $rootScope = _$rootScope_;
-    voiceService = _voiceService_;
+    speechService = _speechService_;
     timekeeperService = _timekeeperService_;
     jasmine.clock().install();
   }));
@@ -80,21 +80,21 @@ describe('TimekeeperController', () => {
   describe('$onInit', () => {
     describe('voice functionality', () => {
       it('listens when voice is enabled', () => {
-        spyOn(voiceService, 'listen');
-        voiceService.setting = 'voice';
+        spyOn(speechService, 'listen');
+        speechService.setting = 'voice';
         ctrl.$onInit();
-        expect(voiceService.listen).toHaveBeenCalled();
+        expect(speechService.listen).toHaveBeenCalled();
       });
 
       it('does not listen when voice is disabled', () => {
-        spyOn(voiceService, 'listen');
-        voiceService.setting = 'none';
+        spyOn(speechService, 'listen');
+        speechService.setting = 'none';
         ctrl.$onInit();
-        expect(voiceService.listen).not.toHaveBeenCalled();
+        expect(speechService.listen).not.toHaveBeenCalled();
       });
 
       it('listens for event to call start() when voice enabled', () => {
-        voiceService.setting = 'voice';
+        speechService.setting = 'voice';
         spyOn(ctrl, 'start');
         ctrl.$onInit();
         expect(ctrl.start).not.toHaveBeenCalled();
@@ -103,7 +103,7 @@ describe('TimekeeperController', () => {
       });
 
       it('listens for event to call pause() when voice enabled', () => {
-        voiceService.setting = 'voice';
+        speechService.setting = 'voice';
         spyOn(ctrl, 'pause');
         ctrl.$onInit();
         expect(ctrl.pause).not.toHaveBeenCalled();
@@ -131,21 +131,21 @@ describe('TimekeeperController', () => {
 
   describe('$onDestroy', () => {
     describe('voice functionality', () => {
-      it('calls voiceService.stopListening() when voice is enabled', () => {
-        spyOn(voiceService, 'stopListening');
-        voiceService.setting = 'voice';
+      it('calls speechService.stopListening() when voice is enabled', () => {
+        spyOn(speechService, 'stopListening');
+        speechService.setting = 'voice';
         ctrl.$onInit();
         ctrl.$onDestroy();
-        expect(voiceService.stopListening).toHaveBeenCalled();
+        expect(speechService.stopListening).toHaveBeenCalled();
       });
 
-      it('does not call voiceService.stopListening() when voice is disabled',
+      it('does not call speechService.stopListening() when voice is disabled',
           () => {
-        spyOn(voiceService, 'stopListening');
-        voiceService.setting = 'none';
+        spyOn(speechService, 'stopListening');
+        speechService.setting = 'none';
         ctrl.$onInit();
         ctrl.$onDestroy();
-        expect(voiceService.stopListening).not.toHaveBeenCalled();
+        expect(speechService.stopListening).not.toHaveBeenCalled();
       });
     });
 

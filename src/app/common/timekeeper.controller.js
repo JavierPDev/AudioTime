@@ -1,13 +1,13 @@
 export default class TimekeeperController {
   constructor($filter, $interval, $scope, $timeout,
-      timekeeperService, voiceService) {
+      timekeeperService, speechService) {
     'ngInject';
     this._$filter = $filter;
     this._$interval = $interval;
     this._$scope = $scope;
     this._$timeout = $timeout;
     this._timekeeperService = timekeeperService;
-    this._voiceService = voiceService;
+    this._speechService = speechService;
   }
 
   start() {
@@ -39,8 +39,8 @@ export default class TimekeeperController {
     this.time = this._timekeeperService.time;
     this.running = false;
     this.cleared = true;
-    if (this._voiceService.setting === 'voice') {
-      this._voiceService.listen();
+    if (this._speechService.setting === 'voice') {
+      this._speechService.listen();
       this._unlistenRecognition = this._$scope.$on('recognition.incoming',
           (event, command) => {
         if (command === 'start') {
@@ -54,9 +54,9 @@ export default class TimekeeperController {
   }
 
   $onDestroy() {
-    if (this._voiceService.setting === 'voice') {
+    if (this._speechService.setting === 'voice') {
       this._unlistenRecognition();
-      this._voiceService.stopListening();
+      this._speechService.stopListening();
     }
     this._timekeeperService.time = this.time;
     this._$interval.cancel(this._intervalPromise);

@@ -11,19 +11,19 @@ export default function StopwatchComponent(appModule) {
 
 class StopwatchController extends TimekeeperController {
   constructor($filter, $interval, $scope, $timeout,
-      stopwatchService, voiceService) {
+      stopwatchService, speechService) {
     'ngInject';
     super(...arguments);
   }
 
   _intervalFn() {
     this.time++;
-    const audioEnabled = this._voiceService.setting === 'audio';
-    const isInterval = this.time % this._voiceService.interval === 0
+    const audioEnabled = this._speechService.setting === 'audio';
+    const isInterval = this.time % this._speechService.interval === 0
       || this.time === 1;
     if (audioEnabled && isInterval) {
-      let phrase = this._voiceService.getTimePhrase(this.time);
-      this._voiceService.speak(phrase);
+      let phrase = this._speechService.getTimePhrase(this.time);
+      this._speechService.speak(phrase);
     }
   }
 }

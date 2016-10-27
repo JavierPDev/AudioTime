@@ -9,24 +9,24 @@ export default function SettingsComponent(appModule) {
 }
 
 class SettingsController {
-  constructor(stopwatchService, timerService, voiceService) {
+  constructor(stopwatchService, timerService, speechService) {
     'ngInject';
     this._stopwatchService = stopwatchService;
     this._timerService = timerService;
-    this._voiceService = voiceService;
+    this._speechService = speechService;
   }
 
   $onInit() {
     this.delay = this._stopwatchService.delay || this._timerService.delay;
-    this.interval = this._voiceService.interval;
-    this.audioVoice = this._voiceService.setting;
+    this.interval = this._speechService.interval;
+    this.audioVoice = this._speechService.setting;
   }
 
   $onDestroy() {
     this._stopwatchService.delay = this.delay;
     this._timerService.delay = this.delay;
-    this._voiceService.interval = this.interval;
-    this._voiceService.setting = this.audioVoice;
+    this._speechService.interval = this.interval;
+    this._speechService.setting = this.audioVoice;
     localStorage.delay = this.delay;
     localStorage.interval = this.interval;
     localStorage.audioVoice = this.audioVoice;
