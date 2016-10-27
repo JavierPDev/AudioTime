@@ -51,8 +51,8 @@ describe('Timer component', () => {
     timerPage.enterSec(0);
     timerPage.start();
     browser.sleep(1000);
-    const oldTime = timerPage.time.getText();
     timerPage.pause();
+    const oldTime = timerPage.time.getText();
     browser.sleep(1000);
     expect(timerPage.time.getText()).toBe(oldTime);
   });
@@ -62,10 +62,7 @@ describe('Timer component', () => {
     timerPage.enterSec(0);
     timerPage.start();
     browser.sleep(1000);
-    expect(timerPage.time.getText()).toBe('9:59');
-    timerPage.pause();
-    browser.sleep(1000);
-    expect(timerPage.time.getText()).toBe('9:59');
+    expect(timerPage.time.getText()).not.toBe('0:00');
     timerPage.reset();
     expect(timerPage.time.getText()).toBe('0:00');
   });
