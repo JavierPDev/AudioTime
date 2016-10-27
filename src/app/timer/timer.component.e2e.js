@@ -51,10 +51,10 @@ describe('Timer component', () => {
     timerPage.enterSec(0);
     timerPage.start();
     browser.sleep(1000);
-    expect(timerPage.time.getText()).toBe('9:59');
+    const oldTime = timerPage.time.getText();
     timerPage.pause();
     browser.sleep(1000);
-    expect(timerPage.time.getText()).toBe('9:59');
+    expect(timerPage.time.getText()).toBe(oldTime);
   });
 
   it('reset works', () => {
