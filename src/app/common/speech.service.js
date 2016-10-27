@@ -8,7 +8,7 @@ export default class SpeechService {
     this._setupTextToSpeech();
 
     this.setting = localStorage.audioVoice || 'audio';
-    this.interval = localStorage.interval || 1;
+    this.interval = parseInt(localStorage.interval) || 1;
   }
 
   /**
