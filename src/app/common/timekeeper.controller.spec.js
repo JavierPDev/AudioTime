@@ -79,14 +79,14 @@ describe('TimekeeperController', () => {
 
   describe('$onInit', () => {
     describe('voice functionality', () => {
-      it('listens when voice is enabled', () => {
+      it('listens for speech when voice is enabled', () => {
         spyOn(speechService, 'listen');
         speechService.setting = 'voice';
         ctrl.$onInit();
         expect(speechService.listen).toHaveBeenCalled();
       });
 
-      it('does not listen when voice is disabled', () => {
+      it('does not listen for speech when voice is disabled', () => {
         spyOn(speechService, 'listen');
         speechService.setting = 'none';
         ctrl.$onInit();

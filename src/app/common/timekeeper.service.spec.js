@@ -15,6 +15,12 @@ describe('Timekeeper superclass', () => {
     expect(timekeeper.delay).toBe(0);
   });
 
+  it('intializes delay to localStored value', () => {
+    localStorage.delay = 5;
+    let t = new TimekeeperService();
+    expect(t.delay.toString()).toBe(localStorage.delay);
+  });
+
   it('reset() sets time back to 0', () => {
     expect(timekeeper.time).toBe(0);
     timekeeper.set(60);
