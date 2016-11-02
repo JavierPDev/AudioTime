@@ -12,14 +12,6 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: './',
 
-    // Explicitly set plugins otherwise karma fails
-    plugins: [
-      require('karma-chrome-launcher'),
-      require('karma-jasmine'),
-      require('karma-webpack'),
-      require('karma-sourcemap-loader')
-    ],
-
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
@@ -60,7 +52,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['mocha'],
 
 
     // web server port
