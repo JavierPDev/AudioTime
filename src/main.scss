@@ -1,17 +1,25 @@
 @import 'vendor';
 @import 'variables';
 
-.center-of-viewport {
-  font-size: 46px;
-  left: 50%;
-  margin-left: -32px;
-  margin-top: -32px;
+.center-container {
+  display: flex;
+  height: 100%;
   position: fixed;
-  top: 50%;
+  width: 100%;
+}
+
+.loading-spinner {
+  color: white;
+  font-size: 64px;
+  margin: auto;
+}
+
+.transparent-modal {
+  background-color: darken($grey, 10%);
+  border-radius: 1%;
 }
 
 .time-container {
   margin: 30px auto;
   width: 320px;
 }
-
