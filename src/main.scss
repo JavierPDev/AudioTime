@@ -23,3 +23,20 @@
   margin: 30px auto;
   width: 320px;
 }
+
+// ui-view animations
+[ui-view].ng-enter, [ui-view].ng-leave {
+  transition: all .5s;
+}
+[ui-view].ng-enter {
+  transform: translate(-1000px, 0);
+}
+[ui-view].ng-enter-active {
+  transform: translate(0, 0);
+}
+[ui-view].ng-leave {
+  opacity: 0;
+}
+[ui-view].ng-leave-active {
+  opacity: 0;
+}

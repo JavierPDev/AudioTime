@@ -1,6 +1,7 @@
 import 'babel-polyfill';
 import angular from 'angular';
 import 'angular-ui-router';
+import ngAnimate from 'angular-animate';
 import 'angular-foundation';
 
 import { app, router } from './app';
@@ -12,8 +13,9 @@ import timer from './app/timer';
 import './main.scss';
 
 const appModule = angular.module('app', [
+  ngAnimate,
   'ui.router',
-  'mm.foundation'
+  'mm.foundation',
 ]);
 
 app(appModule);
