@@ -6,13 +6,13 @@
       time="$ctrl.time">
     </at-clock>
     <div class="time-controls ">
-      <button class="button success"
-        ng-if="!$ctrl.running"
+      <button class="button success no-animate"
+        ng-show="!$ctrl.running"
         ng-click="$ctrl.start()">
         {{ $ctrl.cleared ? 'Start' : 'Resume' }}
       </button>
-      <button class="button alert"
-        ng-if="$ctrl.running"
+      <button class="button alert no-animate"
+        ng-show="$ctrl.running"
         ng-click="$ctrl.pause()">
         Pause
       </button>

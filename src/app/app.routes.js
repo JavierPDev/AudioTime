@@ -1,6 +1,6 @@
 export default function(appModule) {
   appModule.config(function(
-        $stateProvider, $locationProvider, $urlRouterProvider
+        $stateProvider, $locationProvider, $urlRouterProvider, $animateProvider
       ) {
     'ngInject';
 
@@ -28,5 +28,9 @@ export default function(appModule) {
 
     $urlRouterProvider.otherwise('/stopwatch');
     $locationProvider.html5Mode(true);
+
+    // Fix so ng-animate doesn't cause button toggles to remain onscreen for a
+    // second while their opposite buttons are displayed
+    $animateProvider.classNameFilter(/^((?!(no-animate)).)*$/);
   });
 }
