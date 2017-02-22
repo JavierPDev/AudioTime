@@ -16,6 +16,14 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
 
+    // Explicitly set plugins otherwise karma sometimes fails
+    plugins: [
+      require('karma-chrome-launcher'),
+      require('karma-jasmine'),
+      require('karma-mocha-reporter'),
+      require('karma-webpack'),
+      require('karma-sourcemap-loader')
+    ],
 
     // list of files / patterns to load in the browser
     files: [
